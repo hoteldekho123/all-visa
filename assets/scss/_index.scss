@@ -112,8 +112,8 @@
     }
   }
   & .whatsapp-btn {
-    padding: 4px 12px;
-    background: white;
+    padding: 6px 12px;
+    background: $white;
     gap: 5px;
     & .whatsapp-icon {
       height: 25px;
@@ -166,6 +166,27 @@
         top: 0;
     }
   }
+  &.navbar-two {
+    position: fixed;
+    z-index: 23;
+    & .navbar-nav {
+      & .nav-link {
+        color: $white;
+      }
+    }
+    &.fixed-navbar {
+      & .navbar-nav {
+        & .nav-link {
+          color: $black;
+        }
+      }
+      & .navbar-brand {
+        & img {
+          filter: invert(1);
+        }
+      }
+    }
+  }
 }
 
 // navbar media query start 
@@ -207,7 +228,10 @@
       font-size: 13px;
     }
     & .offcanvas-title {
-      height: 40px;
+      height: 30px;
+      & img {
+        filter: invert(1);
+      }
     }
     & .passport-dropdown {
       & .nav-link {
@@ -228,9 +252,42 @@
       gap: 15px;
     }
   }
+  .navbar {
+    &.navbar-two {
+      & .navbar-toggler {
+        color: $white;
+        border-color: $white;
+        border-width: 2px;
+      }
+      & .navbar-nav {
+        & .nav-link {
+          color: $black;
+        }
+      }
+      &.fixed-navbar {
+        & .navbar-nav {
+          & .nav-link {
+            color: $black;
+          }
+        }
+        & .navbar-brand {
+          & img {
+            filter: invert(1);
+          }
+        }
+        & .navbar-toggler {
+          color: lighten($theme1, 3);
+          border-color: lighten($theme1, 0);
+        }
+      }
+    }
+  }
 }
 @include media-breakpoint-down(md) {
   .navbar {
+    & .navbar-brand {
+      height: 42px;
+    }
     & .login-btn {
       padding: 8px 10px;
       line-break: normal;
@@ -238,8 +295,7 @@
       gap: 5px;
     }
     & .navbar-toggler {
-      font-size: 18px;
-      padding: 5px 12px;
+      font-size: 20px;
     }
   }
 }
@@ -353,7 +409,8 @@
   background: url(../img/herosection2.jpg) no-repeat;
   background-position: center;
   background-size: cover;
-  height: 500px;
+  height:600px;
+  padding-top: 50px;
   &::before {
     content: '';
     position: absolute;
@@ -432,7 +489,8 @@
 @include media-breakpoint-down(md) {
   .hero-section {
     height: 100%;
-    padding-block: 60px;
+    padding-block: 70px;
+    padding-top: 110px;
     & .hero-heading {
       font-size:36px;
       line-height: 40px;
@@ -445,7 +503,6 @@
     & .custom-btn {
       margin-top: 15px;
     }
-
     & .hero-inner {
       width: 100%;
     }
@@ -460,7 +517,8 @@
 }
 @include media-breakpoint-down(sm) {
   .hero-section {
-    padding-block: 50px;
+    padding-block: 60px;
+    padding-top: 95px;
     & .hero-heading {
       font-size:28px;
       line-height: 30px;
@@ -1707,6 +1765,216 @@
   }
 }
 // form section media query end
+
+// service card and fee section start 
+.service-page {
+  & .service-heading {
+    font-size: 22px;
+    line-height: normal;
+  }
+  & .pricing-card {
+    transition: 0.3s ease-in-out;
+    border: 2px solid lighten($black, 88);
+    cursor: pointer;
+    & .pricing-card-head {
+      padding: 8px 14px;
+      background-color: $primary;
+      font-size: 18px;
+      color: $white;
+      line-height: normal;
+      border-radius: 0 0 4px 0;
+    }
+    & .pricing-title {
+      font-size: 24px;
+      margin-block: 13px;
+      color: $theme1;
+    }
+    & li {
+      font-size: 16px;
+      color: lighten($black, 40);
+    }
+    & .select-title {
+      font-size: 17px;
+      border: 2px solid lighten($black, 88);
+      border-right: 0;
+      border-top: 0;
+      padding: 6px 22px;
+      line-height: normal;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+      border-radius: 0 0 0 5px;
+      & .selected {
+        display: none;
+      }
+    }
+  }
+  & .checkbox-input {
+    &:checked {
+      & ~ {
+        & .pricing-card {
+          border-color: $theme1;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+          transform: translateY(-7px);
+          & .select-title {
+            background-color: $theme1;
+            border-color: $theme1;
+            color: $white;
+            & .select {
+              display: none;
+            }
+            & .selected {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  & .full-price {
+    margin-top: 20px;
+    & .full-price-title {
+      border: 2px solid lighten($black, 88);
+      padding:12px;
+      line-height: normal;
+      font-size: 18px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      & .check-icon {
+        display: none;
+        height: 20px;
+      }
+    }
+    & .full-price-input {
+      &:checked {
+        & ~ {
+          & .full-price-title {
+            border-color: $theme1;
+            & .check-icon {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+  & .fees-card{
+    padding: 16px 14px;
+    border: 2px solid lighten($black, 88);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    & .fees-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: $theme1;
+    }
+    & .fees-total {
+      & .price {
+        font-size: 24px;
+        margin-bottom: 0;
+        line-height: normal;
+      } 
+      & span {
+        font-size: 15px;
+        color: lighten($black, 60);
+      }
+    }
+  }
+  & .service-card-input {
+    &:checked {
+      & ~ {
+       & .fees-card {
+        border-color: $theme1;
+        transform: scale(1.02);
+       }
+      }
+    }
+  }
+}
+
+// services card and fee section media query start 
+@include media-breakpoint-down(md) {
+  .service-page {
+    & .service-heading {
+      font-size: 21px;
+    }
+    & .pricing-card {
+      & .pricing-card-head {
+        font-size: 17px;
+      }
+      & .pricing-title {
+        font-size: 24px;
+        margin-block: 13px;
+        color: $theme1;
+      }
+     
+      & li {
+        font-size: 16px;
+        color: lighten($black, 40);
+      }
+    }
+    & .full-price {
+      & .full-price-title {
+        font-size: 17px;
+      }
+    }
+    & .fees-card{
+      & .fees-title {
+        font-size: 19px;
+      }
+      & .fees-total {
+        & .price {
+          font-size: 23px;
+        } 
+      }
+    }
+  }
+}
+@include media-breakpoint-down(sm) {
+  .service-page {
+    & .service-heading {
+      font-size: 20px;
+    }
+    & .pricing-card {
+      & .pricing-card-head {
+        font-size: 15px;
+      }
+      & .pricing-title {
+        margin-top: 30px;
+      }
+      & li {
+        font-size: 15px;
+      }
+      & .price {
+        font-size: 20px;
+        line-height: normal;
+      }
+      & .select-title {
+        font-size: 16px;
+        padding: 6px 18px;
+      }
+    }
+    & .full-price {
+      & .full-price-title {
+        font-size: 16px;
+      }
+    }
+    & .fees-card{
+      & .fees-title {
+        font-size: 18px;
+      }
+      & .fees-total {
+        & .price {
+          font-size: 22px;
+        } 
+      }
+    }
+  }
+}
+// services card and fee section media query end
+
+// service card and fee section end
+
+
 
 // ****** form section end ******
 
