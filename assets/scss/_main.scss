@@ -1,0 +1,116 @@
+
+::-webkit-scrollbar-track {
+  background-color: rgba($black, 0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 2px;
+  background-color: rgba($black, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $theming1;
+}
+
+
+body{
+  font-family: 'League Spartan', sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+// common gap section start
+.common-gap {
+  margin-top: 50px;
+}
+.common-gap-two {
+  margin-top: 40px;
+}
+.common-padding {
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+// common gap section end
+
+// heading css start
+.heading-section {
+  & .heading {
+    font-size: 38px;
+    line-height: 46px;
+    & span {
+      color: $theme1;
+    }
+  }
+}
+
+// scroll to top 
+.scroll-top {
+  height: 38px;
+  width: 38px;
+  background-color: $theme2;
+  right: 15px;
+  bottom: 20px;
+  color: $white;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+  z-index: 20;
+  &.fixed-scroll {
+    transform: scale(1);
+  }
+}
+
+
+
+// ****** media query start ******
+@include media-breakpoint-down(lg) {
+  // heading css start
+  .heading-section {
+    & .heading {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+  // heading css end
+}
+@include media-breakpoint-down(md) {
+  // heading css start
+  .heading-section {
+    & .heading {
+      font-size: 34px;
+      line-height: 38px;
+    }
+  }
+  // heading css end
+}
+@include media-breakpoint-down(sm) {
+  // container fluid start 
+  .container-fluid {
+    padding-inline: 5px !important;
+  }
+  // container fluid end
+  
+  // heading css start
+  .heading-section {
+    & .heading {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+  // heading css end
+
+  // common gap section start
+  .common-gap {
+    margin-top: 40px;
+  }
+  .common-gap-two {
+    margin-top: 30px;
+  }
+  .common-padding {
+    padding-top: 35px;
+    padding-bottom: 40px;
+  }
+  // common gap section end
+
+}
+// ****** media query end ******

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply</title>
+    <!-- favicon  -->
+    <!-- <link rel="icon" type="image/x-icon" href="assets/img/index/logo2.png"> -->
+    <!-- jquery  -->
+    <script src="assets/js/JQUERY.js"></script>
+    <!-- css  -->
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <!-- bootstrap css  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="assets/FontAwesome/css/all.min.css">
+    <!-- select library  -->
+    <link rel="stylesheet" href="assets/libs/selectbox/css/select2.min.css">
+    <!-- select library 2 -->
+    <link rel="stylesheet" href="assets/libs/selectbox/css/intlTelInput.min.css">
+</head>
+<body>
+    <!-- scroll to top start  -->
+    <a href="#" class="d-flex align-items-center justify-content-center scroll-top rounded-circle position-fixed text-decoration-none" id="scrolltop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    <!-- scroll to top end -->
+
+    <!-- whatsapp button start  -->
+    <a href="javascript:;" class="whatsapp-common-btn d-md-none position-fixed d-flex align-items-center justify-content-center"> 
+        <img src="assets/img/whatsapp.png" alt="whatsapp" class="h-100 w-100 img-fluid">
+    </a>
+    <!-- whatsapp button end -->
+
+    <!-- navbar start  -->
+    <nav class="navbar navbar-expand-lg shadow-sm w-100" aria-label="Offcanvas navbar large" id="navbar">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <img src="assets/img/logo.png" alt="logo" class="h-100 w-100 img-fluid">
+          </a>
+        
+          <div class="offcanvas offcanvas-start nav-offcanvas " tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title d-flex align-items-center justify-content-center" id="offcanvasNavbar2Label">
+                <img src="assets/img/logo.png" alt="offcnavas logo" class="h-100 w-100 img-fluid">
+              </h5>
+              <button type="button" class="btn-close shadow-none    " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-center flex-grow-1 accordion" id="accordionExample">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Travel Documents</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">iVisa Plus</a>
+                </li>
+                <li class="nav-item passport-dropdown position-relative accordion-item border-0">
+                  <a class="nav-link accordion-button shadow-none bg-transparent border-0 d-flex align-items-center collapsed justify-content-lg-start justify-content-between" href="#" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">  
+                    Passport
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </a>
+                  <div class="accordion-collapse passport-menu-main z-2 bg-white shadow collapse" id="collapseOne" data-bs-parent="#accordionExample">
+                      <ul class="passport-men d-flex flex-column list-unstyled " >
+                        <li><a class="passport-item text-nowrap text-decoration-none w-100 d-flex" href="#">US Passport Renewal</a></li>
+                        <li><a class="passport-item text-nowrap text-decoration-none w-100 d-flex" href="#">UK Passport Renewal</a></li>
+                        <li><a class="passport-item text-nowrap text-decoration-none w-100 d-flex" href="#">Canada Passport Renewal</a></li>
+                        <li><a class="passport-item text-nowrap text-decoration-none w-100 d-flex" href="#">Ireland Passport Renewal</a></li>
+                      </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-4">
+            <a href="javascript:;" class="whatsapp-btn border rounded-2 d-md-flex d-none align-items-center text-decoration-none">
+                <span class="whatsapp-icon d-flex align-items-center justify-content-center">
+                    <img src="assets/img/whatsapp.png" alt="whatsapp" class="h-100 w-100 img-fluid">
+                </span>
+                <div>
+                    <div class="chat-title w-100">Chat with us on </div>
+                    <div class="chat-number w-100">+91 123456789</div>
+                </div>
+            </a>
+            <button class="login-btn border-0 rounded-2 d-flex align-items-center justify-content-center " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <span class="d-flex align-items-center justify-content-center">
+                    <i class="fa-regular fa-circle-user"></i>
+                </span>
+                <span>
+                    <span>Login </span>
+                    <span>/</span>
+                    <span>Resister </span>
+                </span>
+            </button>
+            <button class="navbar-toggler shadow-none d-lg-none d-flex align-items-center justify-content-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+    </nav>
+    <!-- navbar end  -->
+
+    <!-- form section start  -->
+    <div class="container-fluid form-section common-gap">
+        <div  class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 country-name">
+                    <p class="fw-medium mb-1">Brazil</p>
+                </div>
+                <div class="form-heading">
+                    <h2>Antigua & Barbuda</h2>
+                </div>
+                <div class="col-12 mt-md-4 mt-3">
+                    <ul id="progressbar" class="progress-list ps-0 list-unstyled">
+                        <li class="active position-relative tripdetail" id="account"><span>Trip Details</span></li>
+                        <li id="personal" class="position-relative yourinfo"><span>Your Info</span></li>
+                        <li id="payment" class="position-relative services"><span>Services</span></li>
+                        <li id="confirm" class="position-relative checkout"><span>Checkout</span></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="row mt-3 gap-lg-0 gap-4">
+                <div class="col-lg-8">
+                    <form id="msform" class="position-relative text-center form-card-main">
+                        <fieldset>
+                            <div class="input-card border pt-0 rounded-2 text-start">
+                                <div class="row gap-3">
+                                    <div class="col-12 card-header border-bottom">
+                                        <h2 class="form-inner-heading position-relative text-start ms-3">Trip Detail:</h2>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">When do you arrive at your destination?</label>
+                                            <input type="date" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">When do you depart from your destination?</label>
+                                            <input type="date" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">Email address</label>
+                                            <input type="email" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main number-field">
+                                            <label for="" class="input-label">Country code and phone number 
+                                            </label>
+                                            <div class="form-control form-input shadow-none bg-white rounded-2 d-flex align-items-center p-0">
+                                                <input id="phone" name="phone" type="tel" placeholder="Enter Mobile No." class="form-control w-100 border-0 border-start bg-transparent ps-2 form-input shadow-none bg-white rounded-0" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex align--">
+                                            <input type="checkbox" class="checkbox" id="privacy-policy">
+                                            <label for="privacy-policy" class="privacy-policy-title">
+                                                I certify that I have read and accept the Travejar Terms and Conditions, Privacy Policy, and Refund Policy.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex align-iem-baseline">
+                                            <input type="checkbox" class="checkbox" id="privacy-policy2">
+                                            <label for="privacy-policy2" class="privacy-policy-title">
+                                                Yes, I want Travejar to send me marketing emails about Travejar products, services, and promotions.  I can unsubscribe at any time.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <button type="button" class="next action-button mt-3 float-end rounded-1 fw-semibold gap-2 border-0">
+                                Save and Continue
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <!-- <input type="button" name="next" class="next action-button rounded-1 fw-semibold" value="Next" /> -->
+                        </fieldset>
+                        <fieldset>
+                            <div class="input-card border pt-0 rounded-2 text-start">
+                                <div class="row gap-3">
+                                    <div class="col-12 card-header border-bottom">
+                                        <h2 class="form-inner-heading position-relative text-start ms-3">Your Personal Details:</h2>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">First and middle name <i class="fa-solid fa-circle-info ms-2" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Including a middle name is recommended, but it's not required if you don't have one."></i></label>
+                                            <input type="text" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">Last name</label>
+                                            <input type="text" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label ">Gender</label>
+                                            <select class="form-select form-control form-input shadow-none bg-white rounded-2" aria-label="Default select example">
+                                                <option selected>
+                                                    Select Gender
+                                                </option>
+                                                <option value="1">Male</option>
+                                                <option value="2">Female</option>
+                                                <option value="3">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">Date of birth</label>
+                                            <input type="date" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div> 
+                            <button type="button" class="next action-button mt-3 float-end rounded-1 fw-semibold gap-2 border-0">
+                                Save and Continue
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <button type="button" class="previous me-4 action-button mt-3 float-end rounded-1 fw-semibold gap-2 border-0">
+                                <i class="fa-solid fa-arrow-left"></i>
+                               Preview
+                            </button>
+                        </fieldset>
+                        <fieldset>
+                            <div class="input-card border rounded-2 pt-0- text-start">
+                                <div class="row gap-3">
+                                    <div class="col-12 card-header border-bottom">
+                                        <h2 class="form-inner-heading position-relative text-start ms-3">Trip Detail:</h2>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">When do you arrive at your destination?</label>
+                                            <input type="date" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">When do you depart from your destination?</label>
+                                            <input type="date" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">Email address</label>
+                                            <input type="email" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex align--">
+                                            <input type="checkbox" class="checkbox" id="privacy-policy">
+                                            <label for="privacy-policy" class="privacy-policy-title">
+                                                I certify that I have read and accept the Travejar Terms and Conditions, Privacy Policy, and Refund Policy.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex align-iem-baseline">
+                                            <input type="checkbox" class="checkbox" id="privacy-policy2">
+                                            <label for="privacy-policy2" class="privacy-policy-title">
+                                                Yes, I want Travejar to send me marketing emails about Travejar products, services, and promotions.  I can unsubscribe at any time.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <button type="button" class="next action-button mt-3 float-end rounded-1 fw-semibold gap-2 border-0">
+                                Save and Continue
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <button type="button" class="previous me-4 action-button mt-3 float-end rounded-1 fw-semibold gap-2 border-0">
+                                <i class="fa-solid fa-arrow-left"></i>
+                               Preview
+                            </button>
+                        </fieldset>
+                        <fieldset>
+                            <div class="input-card border rounded-2 text-start">
+                                <div class="row gap-3">
+                                    <div class="col-12 card-header border-bottom">
+                                        <h2 class="form-inner-heading position-relative text-start ms-3">Trip Detail:</h2>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">When do you arrive at your destination?</label>
+                                            <input type="date" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">When do you depart from your destination?</label>
+                                            <input type="date" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-main">
+                                            <label for="" class="input-label">Email address</label>
+                                            <input type="email" class="form-control form-input shadow-none bg-white rounded-2">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex align--">
+                                            <input type="checkbox" class="checkbox" id="privacy-policy">
+                                            <label for="privacy-policy" class="privacy-policy-title">
+                                                I certify that I have read and accept the Travejar Terms and Conditions, Privacy Policy, and Refund Policy.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="d-flex align-iem-baseline">
+                                            <input type="checkbox" class="checkbox" id="privacy-policy2">
+                                            <label for="privacy-policy2" class="privacy-policy-title">
+                                                Yes, I want Travejar to send me marketing emails about Travejar products, services, and promotions.  I can unsubscribe at any time.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <button type="button" class="previous me-4 action-button mt-3 float-end rounded-1 fw-semibold gap-2 border-0">
+                                <i class="fa-solid fa-arrow-left"></i>
+                               Edit Profile
+                            </button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="input-card sticky-top pb-0 checkout-card  border rounded-2 text-start">
+                        <div class="row">
+                            <div class="col-12 card-data-main pt-0">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h2 class="checkout-title position-relative text-start m-0">Documents</h2>
+                                    <div class="checkout-price">1  Applicant</div>
+                                </div>
+                                <div class="checkout-data">
+                                    <p class="m-0">Azerbaijan Business eVisa (90 days, Single Entry)</p>
+                                </div>
+                            </div>
+                            <div class="col-12 border-top card-data-main">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="checkout-data">
+                                        <p class="m-0">Government Fees</p>
+                                    </div>
+                                    <div class="checkout-price">1343</div>
+                                </div>
+                            </div>
+                            <div class="col-12 border-top card-data-main ">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="checkout-data">
+                                        <p class="m-0">Processing Speed (not selected yet)</p>
+                                    </div>
+                                    <div class="checkout-price">1  </div>
+                                </div>
+                            </div>
+                            <div class="col-12 border-top card-data-main">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h2 class="checkout-title position-relative text-start m-0">Total</h2>
+                                    <div class="checkout-price-two">1343</div>
+                                </div>
+                                <div class="checkout-data">
+                                    <p class="m-0">For all applicants</p>
+                                </div>
+                            </div>
+                            <div class="col-12 border-top card-data-main checkout-footer">
+                               <div class="d-flex gap-1">
+                                    <div class="security-icon d-flex align-items-center justify-content-center">
+                                        <img src="assets/img/secure2.svg" alt="secure" class="h-100 w-100 img-fluid">
+                                    </div>
+                                    <div>
+                                        <div class="secure-heading fw-medium">
+                                            Your Info Safe With Us
+                                        </div>
+                                        <div class="secure-title">
+                                            For more details see the <a href="" class="text-decoration-none">Travejar Data Security Promise</a>
+                                        </div>
+                                    </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- form section end -->
+
+    <!-- login sign up modal start -->
+    <div class="modal fade login-modal " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog login-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content overflow-hidden rounded-1">
+            <div class="modal-body p-0 position-relative">
+              <div class="row mx-0">
+                <div class="col-md-6 ps-0">
+                    <div class="login-img position-relative h-100 d-flex align-items-center justify-content-center">
+                        <div class="row position-relative z-1">
+                           <div class="col-12 form-heading fw-medium text-center">
+                                Welcome To Travejar 
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="h-100 py-5 ">
+                        <ul class="nav nav-pills login-pills rounded-2 p-1 mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item w-50" role="presentation">
+                              <button class="nav-link active w-100" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="true">Login</button>
+                            </li>
+                            <li class="nav-item w-50" role="presentation">
+                              <button class="nav-link w-100" id="pills-resister-tab" data-bs-toggle="pill" data-bs-target="#pills-resister" type="button" role="tab" aria-controls="pills-resister" aria-selected="false">Resister</button>
+                            </li>
+                          </ul>
+                          <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab" tabindex="0">
+                               <form action="">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="" class="input-label fw-medium">Email <span>*</span></label>
+                                            <input type="email" class="form-control form-input" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <div class="form-group">
+                                            <label for="" class="input-label fw-medium">Password <span>*</span></label>
+                                            <input type="password" class="form-control form-input" placeholder="Password">
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-12 text-center mt-3 pt-2">
+                                       <div class="d-flex align-items-center justify-content-center">
+                                            <button class="custom-btn">
+                                                Continue
+                                           </button>
+                                       </div>
+                                    </div>
+                                    <div class="col-12 text-center pt-4">
+                                        <span class="text-decoration-none forgetpassword">
+                                            Don't Have Account <a href="" class="fw-medium text-decoration-none" data-bs-toggle="pill" data-bs-target="#pills-resister" type="button" role="tab" aria-controls="pills-resister" aria-selected="false">Sign Up ?</a>
+                                        </span>
+                                    </div>
+                                </div>
+                               </form>
+                            </div>
+                            <div class="tab-pane fade" id="pills-resister" role="tabpanel" aria-labelledby="pills-resister-tab" tabindex="0">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="" class="input-label fw-medium">First Name <span>*</span></label>
+                                                <input type="text" class="form-control form-input" placeholder="First Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <div class="form-group">
+                                                <label for="" class="input-label fw-medium">Last Name <span>*</span></label>
+                                                <input type="text" class="form-control form-input" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <div class="form-group">
+                                                <label for="" class="input-label fw-medium">Email <span>*</span></label>
+                                                <input type="email" class="form-control form-input" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <div class="form-group">
+                                                <label for="" class="input-label fw-medium">Password <span>*</span></label>
+                                                <input type="password" class="form-control form-input" placeholder="Password">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <div class="form-group">
+                                                <label for="" class="input-label fw-medium">Confirm Password <span>*</span></label>
+                                                <input type="password" class="form-control form-input" placeholder="Confirm Password">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-center mt-3 pt-2">
+                                           <div class="d-flex align-items-center justify-content-center">
+                                                <button class="custom-btn">
+                                                    Resister
+                                               </button>
+                                           </div>
+                                        </div>
+                                    </div>
+                                   </form>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+              </div>
+              <button type="button" class="btn-close position-absolute shadow-sm" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+          </div>
+        </div>
+    </div>
+    <!-- login sign up modal end -->
+
+
+    <!-- footer start  -->
+    <footer class="container-fluid footer-section border-top common-gap position-relative">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-logo">
+                        <img src="assets/img/logo.png" alt="logo" class="h-100 w-100 img-fluid">
+                    </div>
+                    <p class="footer-para">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel vitae eos eveniet similique adipisci a.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-4">
+                    <div class="footer-heading fw-semibold">
+                        Services
+                    </div>
+                    <ul class="footer-list list-unstyled d-flex flex-column">
+                        <li><a href="visa-requirement.html" class="text-decoration-none footer-link footer-link-two fw-medium">Visa Requirement</a></li>
+                        <li><a href="javascript:;" class="text-decoration-none footer-link footer-link-two fw-medium">Visa Policy</a></li>
+                        <li><a href="blog.html" class="text-decoration-none footer-link footer-link-two fw-medium">Blog</a></li>
+                        <li><a href="faq.html" class="text-decoration-none footer-link footer-link-two fw-medium">Faq</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-4">
+                    <div class="footer-heading fw-semibold">
+                        Usefull Link
+                    </div>
+                    <ul class="footer-list list-unstyled d-flex flex-column">
+                        <li><a href="javascript:;" class="text-decoration-none footer-link footer-link-two fw-medium">Privacy Policy</a></li>
+                        <li><a href="javascript:;" class="text-decoration-none footer-link footer-link-two fw-medium">Cookie Policy</a></li>
+                        <li><a href="javascript:;" class="text-decoration-none footer-link footer-link-two fw-medium">Terms & Condition</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-heading fw-semibold">
+                       Get In Touch
+                    </div>
+                    <ul class="footer-list list-unstyled d-flex flex-column">
+                        <li>
+                            <a href="javascript:;" class="text-decoration-none footer-link footer-link-two fw-medium">
+                                <i class="fa-solid fa-phone"></i>
+                                +91-123456789
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="text-decoration-none footer-link footer-link-two fw-medium">
+                                <i class="fa-regular fa-envelope"></i>
+                                demo@gmail.com
+                            </a>
+                        </li>
+                        <li class="footer-link fw-medium">
+                            <i class="fa-solid fa-location-dot"></i>
+                                19,20 tower , vaishali nagar , jaipur
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row payment-main gap-md-0 gap-3 align-items-center justify-content-between">
+                <div class="col-md">
+                   <div class="d-flex flex-sm-row flex-column align-items-center justify-content-sm-start justify-content-center">
+                        <h4 class="mb-0 me-4">Pay Safely With Us!</h4>
+                        <ul class="pay-list list-unstyled d-flex align-items-center m-0 mt-sm-0 mt-3">
+                            <li class="pay-img"><img src="assets/img/pay1.svg" alt="payment" class="h-100 w-100 img-fluid"></li>
+                            <li class="pay-img"><img src="assets/img/pay2.svg" alt="payment" class="h-100 w-100 img-fluid"></li>
+                            <li class="pay-img"><img src="assets/img/pay3.svg" alt="payment" class="h-100 w-100 img-fluid"></li>
+                            <li class="pay-img"><img src="assets/img/pay4.svg" alt="payment" class="h-100 w-100 img-fluid"></li>
+                        </ul>
+                   </div>
+
+                </div>
+                <div class="col-md-auto mt-md-0 mt-3">
+                    <ul class="d-flex align-items-center justify-content-md-start justify-content-center m-0 social-list list-unstyled">
+                        <li>
+                            <a href="#" class="social-icon d-flex align-items-center justify-content-center overflow-hidden text-decoration-none position-relative rounded-circle facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="twitter social-icon d-flex align-items-center justify-content-center overflow-hidden text-decoration-none position-relative rounded-circle">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="instagram social-icon d-flex align-items-center justify-content-center overflow-hidden text-decoration-none position-relative rounded-circle">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="google social-icon d-flex align-items-center justify-content-center overflow-hidden text-decoration-none position-relative rounded-circle">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <!-- copyright section start  -->
+    <section class="container-fluid copyright-section">
+        <div class="container">
+           <p class="m-0 text-center fw-medium">
+                @ <script>document.write(new Date().getFullYear())</script> All Country Visa. All Right Reserved A project by Travejar
+           </p>
+        </div>
+    </section>
+    <!-- copyright section end -->
+
+    <!-- bootstrap js  -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- custom js  -->
+    <script src="assets/js/main.js"></script>
+    <!-- select library  -->
+    <script src="assets/libs/selectbox/js/select2.min.js"></script>
+     <!-- select library 2 -->
+     <script src="assets/libs/selectbox/js/intlTelInput.min.js"></script>
+
+
+
+    <!-- tooltip start  -->
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
+    <script>
+        var input = document.querySelector("#phone");
+        window.intlTelInput(input, {
+
+        utilsScript: "build/js/utils.js"
+        });
+    </script>
+
+</body>
+</html>
